@@ -20,10 +20,10 @@ var username = builder.AddParameter("username", secret: true);
 var password = builder.AddParameter("password", secret: true);
 
 // Conditionally update the app model with secrets.
-var secrets =
-    builder.ExecutionContext.IsPublishMode   
-        ? builder.AddAzureKeyVault("secrets")
-        : builder.AddConnectionString("secrets");
+//var secrets =
+//    builder.ExecutionContext.IsPublishMode   
+//        ? builder.AddAzureKeyVault("secrets")
+//        : builder.AddConnectionString("secrets");
 
 var db = builder
     .AddPostgres("postgres", username, password)
@@ -39,7 +39,7 @@ var migrations = builder.AddProject<Projects.ECommerce_MigrationService>("migrat
 var eCommerceApi = builder.AddProject<Projects.ECommerce_Api>("e-commerce-api")
      .WithReference(db)
      .WaitFor(db)
-     .WithReference(secrets)
+     //.WithReference(secrets)
      .WaitForCompletion(migrations)
      .WithExternalHttpEndpoints();
 

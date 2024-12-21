@@ -12,10 +12,10 @@ builder.AddServiceDefaults();
 
 
 // Add Azure Key Vault secret values to app configuration.
-builder.Configuration.AddAzureKeyVaultSecrets("secrets");
+//builder.Configuration.AddAzureKeyVaultSecrets("secrets");
 
 // Add Azure Key Vault 'SecretClient' to DI container.
-builder.AddAzureKeyVaultClient("secrets");
+//builder.AddAzureKeyVaultClient("secrets");
 
 
 

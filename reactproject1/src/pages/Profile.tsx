@@ -14,7 +14,7 @@ import { loginRequest } from "../authConfig";
 import { ProfileData } from "../ui-components/ProfileData";
 import { Loading } from "../ui-components/Loading";
 import { ErrorComponent } from "../ui-components/ErrorComponent";
-import { callPrivateEndpoint } from "../utils/PrivateEndpointApiCall";
+//import { callPrivateEndpoint } from "../utils/PrivateEndpointApiCall";
 
 // Material-ui imports
 import Paper from "@mui/material/Paper";
@@ -35,16 +35,16 @@ const ProfileContent = () => {
   //     });
   // }, []);
 
-  const callAPI = () => {
-    console.log("it has been run ");
-    callPrivateEndpoint()
-      .then((result) => {
-        console.log("Result of the call", result);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
+  //const callAPI = () => {
+  //  console.log("it has been run ");
+  //  callPrivateEndpoint()
+  //    .then((result) => {
+  //      console.log("Result of the call", result);
+  //    })
+  //    .catch((err) => {
+  //      console.error(err);
+  //    });
+  //};
 
   // useEffect(() => {
   //   if (!userName && inProgress === InteractionStatus.None) {
@@ -63,7 +63,7 @@ const ProfileContent = () => {
 
   return (
     <Paper>
-      <ProfileData /> <Button onClick={callAPI}>Fetch Data</Button>
+      {/*<ProfileData /> <Button onClick={callAPI}>Fetch Data</Button>*/}
     </Paper>
   );
 };
